@@ -39,7 +39,7 @@ app.use(bodyParser.urlencoded({
 
 //Connect to the database (locally)
 mongoose
-    .connect("mongodb://localhost:27017/pharmacy", {
+    .connect("mongodb+srv://nagabhushan_km:Nani@2020@cluster0.p3yru.mongodb.net/pharmacymanegementsystem", {
         useNewUrlParser: true,
         useCreateIndex: true,
         useUnifiedTopology: true,
@@ -56,6 +56,7 @@ mongoose
 //Serve the public directory
 app.use(express.static("public"));
 app.use(methodOverride("_method"));
+
 
 
 
@@ -376,6 +377,6 @@ app.get("/about", function (req, res) {
     res.render("about.ejs", {});
 });
 
-app.listen(2000, function () {
+app.listen(process.env.PORT || 8080, function () {
     console.log("server started");
 });
