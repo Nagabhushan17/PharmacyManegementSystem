@@ -63,7 +63,7 @@ app.use(methodOverride("_method"));
 //Routes
 
 app.get("/",function(req,res){
-    res.render("welcomepage.ejs");
+    res.render("managerLanding.ejs");
 
 })
 
