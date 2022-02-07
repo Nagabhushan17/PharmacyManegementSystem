@@ -90,14 +90,14 @@ function isLoggedin(req,res,next){
 //Register user
 
 //Show register page
-app.get("/adduser",isLoggedin, function (req, res) {
+app.get("/adduser", function (req, res) {
     res.render("adduser.ejs");
 });
 
 
 
 //Register logic
-app.post("/adduser", isLoggedin,function (req, res) {
+app.post("/adduser", function (req, res) {
 
     const {
         email,
@@ -190,7 +190,7 @@ app.get("/welcome/:pos",isLoggedin, function (req, res) {
 })
 
 
-app.get("/managerLanding",isLoggedin, function(req,res){
+app.get("/managerLanding", function(req,res){
     Stock.find({}, function (err, adduser) {
         if (err) {
             console.log(err);
