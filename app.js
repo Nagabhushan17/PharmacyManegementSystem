@@ -172,7 +172,7 @@ app.get("/logout", function (req, res) {
 
 
 //Handle Landing page
-app.get("/welcome/:pos",isLoggedin, function (req, res) {
+app.get("/welcome/:pos", function (req, res) {
     if (req.params.pos === "Manager") {
         Stock.find({}, function (err, adduser) {
             if (err) {
@@ -211,7 +211,7 @@ app.get("/cashierLanding",isLoggedin,function(req,res){
     res.render("cashierLanding.ejs")
 })
 
-app.get("/welcome/Manager",isLoggedin,function(req,res){
+app.get("/welcome/Manager",function(req,res){
     res.render("managerLanding.ejs")
 })
 
